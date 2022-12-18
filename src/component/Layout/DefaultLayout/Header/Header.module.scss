@@ -11,9 +11,12 @@
     align-items: center;
     justify-content: space-between;
 }
+.search,
+.search-result {
+    width: 361px;
+}
 .search {
     height: 46px;
-    width: 361px;
     background: rgba(22, 24, 35, 0.06);
     display: flex;
     border-radius: 92px;
@@ -69,4 +72,10 @@ input,
 button {
     outline: none;
     border: none;
+}
+.search-title {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }

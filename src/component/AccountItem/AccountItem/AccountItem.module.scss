@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    padding: 6px 16px;
+    cursor: pointer;
+    align-items: center;
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.info {
+    flex: 1;
+    margin-left: 12px;
+}
+.name {
+    font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+.username {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline;
+    color: rgba(22, 24, 35, 0.75);
+}
