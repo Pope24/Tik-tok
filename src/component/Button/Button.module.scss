@@ -1,9 +1,50 @@
 .wrapper {
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(254, 44, 85, 1);
-    height: 36px;
+    padding: 9px 16px;
     min-width: 100px;
     font-size: 1.6rem;
     font-weight: 700;
     border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    + .wrapper {
+        margin-left: 8px;
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        user-select: none;
+    }
+}
+.primary {
+    color: rgba(255, 255, 255, 1);
+    background-color: var(--primary);
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
+}
+.outline {
+    color: var(--primary);
+    border-color: currentColor;
+    padding: 4px 16px;
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+.text {
+    background-color: rgba(255, 255, 255, 1);
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+// Button sizes
+.small {
+    min-width: 88px;
+    padding: 4px 16px;
+}
+.large {
+    padding: 14px 16px;
+    min-width: 148px;
 }
