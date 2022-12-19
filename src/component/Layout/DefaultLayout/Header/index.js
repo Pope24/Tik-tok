@@ -2,16 +2,36 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
-import { faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faKeyboard, faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faCloudMoon, faEllipsisVertical, faGlobe, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/component/Popper';
 import AccountItem from '~/component/AccountItem';
 import Button from '~/component/Button';
+import Menu from '~/component/Popper/Menu';
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
+    const MENU_ITEMS = [
+        {
+            icon: <FontAwesomeIcon icon={faGlobe} />,
+            title: 'English',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            title: 'Feedback and help',
+            to: '/feedback',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faKeyboard} />,
+            title: 'Keyboard shortcuts',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faMoon} />,
+            title: 'Dark mode',
+        },
+    ];
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -50,6 +70,11 @@ function Header() {
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Login</Button>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

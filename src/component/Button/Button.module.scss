@@ -1,4 +1,7 @@
 .wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 9px 16px;
     min-width: 100px;
     font-size: 1.6rem;
@@ -13,6 +16,10 @@
         pointer-events: none;
         opacity: 0.5;
         user-select: none;
+    }
+    .icon + .title,
+    .title + .icon {
+        margin-left: 8px;
     }
 }
 .primary {
@@ -38,6 +45,24 @@
         text-decoration: underline;
         background-color: rgba(22, 24, 35, 0.03);
     }
+}
+.bounded {
+    border-radius: 999px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    color: rgba(22, 24, 35, 0.75);
+    font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    background: none;
+    &:hover {
+        cursor: pointer;
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+.icon {
+    display: inline-block;
+    width: 20px;
 }
 // Button sizes
 .small {
